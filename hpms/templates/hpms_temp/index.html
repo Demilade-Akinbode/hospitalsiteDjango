@@ -1,0 +1,239 @@
+{% extends "hpms_temp/base.html" %}
+{% load static %}
+
+{% block special_css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'hpms_static/styles/main_styles.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'hpms_static/styles/responsive.css' %}">
+{% endblock special_css %}
+
+{% block special_background %}
+	<div class="background_image" style="background-image:url('../static/hpms_static/images/index_hero.jpg')"></div> 
+{% endblock special_background %}
+
+{% block content %}
+	<div class="home_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="home_content">
+								<div class="home_title">Medical Services that you can trust</div>
+								<div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien.</div>
+								<div class="button home_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Info Boxes -->
+
+		<div class="info">
+			<div class="container">
+				<div class="row row-eq-height">
+
+					<!-- Info Box -->
+					<div class="col-lg-4 info_box_col">
+						<div class="info_box">
+							<div class="info_image"><img src="{% static 'hpms_static/images/info_1.jpg' %}" alt=""></div>
+							<div class="info_content">
+								<div class="info_title">Free Consultations</div>
+								<div class="info_text">Arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus mollis.</div>
+								<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Info Box -->
+					<div class="col-lg-4 info_box_col">
+						<div class="info_box">
+							<div class="info_image"><img src="{% static 'hpms_static/images/info_2.jpg' %}" alt=""></div>
+							<div class="info_content">
+								<div class="info_title">Emergency Care</div>
+								<div class="info_text">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus.</div>
+								<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Info Form -->
+					<div class="col-lg-4 info_box_col">
+						<div class="info_form_container">
+							<div class="info_form_title">Make an Appointment</div>
+							<form action="{% url 'hpms-appointment' %}" method="POST" class="info_form" id="info_form">
+								{% csrf_token %} 
+								<select name="info_form_doc" id="info_form_doc" class="info_form_doc info_input info_select" placeholder="Doctor" required="required">
+									<option>Doctor</option>
+									<option>Cardiologist</option>
+									<option>Pharmacist</option>
+									<option>Lab Attendant</option>
+									<option>Surgeon</option>
+									<option>Dentist</option>
+								</select>
+								<select name="your-schedule" id="info_form_doc" class="info_form_doc info_input info_select" placeholder="Doctor" required="required">
+									<option>Appointment Time</option>
+									<option>9 AM TO 10AM</option>
+									<option>11 AM TO 12 PM</option>
+									<option>2 PM TO 4 PM</option>
+									<option>8 PM TO 10 PM</option>
+								</select>
+								<!--<select name="your-date" id="info_form_doc" class="info_form_doc info_input info_select" placeholder="Doctor" required="required">
+									<option>Appointment Date</option>
+									<option>Monday</option>
+									<option>Tuesday</option>
+									<option>Wednesday</option>
+									<option>Thursday</option>
+									<option>Friday</option>
+								</select> -->
+								<input name="your-date" type="date" class="info_input" placeholder="Appointment Date" required="required">
+								<input name="your-name" type="text" class="info_input" placeholder="Name" required="required">
+								<input name="your-phone" type="text" class="info_input" placeholder="Phone No">
+								<input name="your-email" type="email" class="info_input" placeholder="Email" required="required">
+								<button class="info_form_button">make an appointment</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- CTA -->
+
+		<div class="cta">
+			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'hpms_static/images/cta_1.jpg' %}" data-speed="0.8"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="cta_container d-flex flex-xl-row flex-column align-items-xl-start align-items-center justify-content-xl-start justify-content-center">
+							<div class="cta_content text-xl-left text-center">
+								<div class="cta_title">Make an appointment with one of our professional Doctors.</div>
+								<div class="cta_subtitle">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas.</div>
+							</div>
+							<div class="button cta_button ml-xl-auto"><a href="/contact"><span>call now</span><span>call now</span></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Services -->
+
+		<div class="services">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<div class="section_title">Our Services</div>
+						<div class="section_subtitle">to choose from</div>
+					</div>
+				</div>
+				<div class="row icon_boxes_row">
+
+					<!-- Icon Box -->
+					<div class="col-xl-4 col-lg-6">
+						<div class="icon_box">
+							<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+								<div class="icon_box_icon"><img src="{% static 'hpms_static/images/icon_2.svg' %}" alt=""></div>
+								<div class="icon_box_title">Pharmacy</div>
+							</div>
+							<div class="icon_box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuada lorem maximus mauris.</div>
+						</div>
+					</div>
+
+					<!-- Icon Box -->
+					<div class="col-xl-4 col-lg-6">
+						<div class="icon_box">
+							<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+								<div class="icon_box_icon"><img src="{% static 'hpms_static/images/icon_3.svg' %}" alt=""></div>
+								<div class="icon_box_title">Medical Lab</div>
+							</div>
+							<div class="icon_box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuada lorem maximus mauris.</div>
+						</div>
+					</div>
+
+					<!-- Icon Box -->
+					<div class="col-xl-4 col-lg-6">
+						<div class="icon_box">
+							<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+								<div class="icon_box_icon"><img src="{% static 'hpms_static/images/icon_5.svg' %}" alt=""></div>
+								<div class="icon_box_title">Surgery</div>
+							</div>
+							<div class="icon_box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuada lorem maximus mauris.</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="button services_button ml-auto mr-auto"><a href="/services"><span>read more</span><span>read more</span></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Departments -->
+
+		<div class="departments">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<div class="section_title">Our Departments</div>
+						<div class="section_subtitle">to choose from</div>
+					</div>
+				</div>
+				<div class="row dept_row">
+					<div class="col">
+						<div class="dept_slider_container_outer">
+							<div class="dept_slider_container">
+
+								<!-- Slider -->
+								<div class="owl-carousel owl-theme dept_slider">
+									
+									<!-- Slide -->
+									<div class="owl-item dept_item">
+										<div class="dept_image"><img src="{% static 'hpms_static/images/dept_3.jpg' %}" alt=""></div>
+										<div class="dept_content">
+											<div class="dept_title">Pharmacy</div>
+											<div class="dept_link"><a href="#">Read More</a></div>
+										</div>
+									</div>
+
+									<!-- Slide -->
+									<div class="owl-item dept_item">
+										<div class="dept_image"><img src="{% static 'hpms_static/images/dept_1.jpg' %}" alt=""></div>
+										<div class="dept_content">
+											<div class="dept_title">Surgery</div>
+											<div class="dept_link"><a href="#">Read More</a></div>
+										</div>
+									</div>
+
+									<!-- Slide -->
+									<div class="owl-item dept_item">
+										<div class="dept_image"><img src="{% static 'hpms_static/images/dept_4.jpg' %}" alt=""></div>
+										<div class="dept_content">
+											<div class="dept_title">Laboratory</div>
+											<div class="dept_link"><a href="#">Read More</a></div>
+										</div>
+									</div>
+
+								</div>
+								
+							</div>
+
+							<!-- Dept Slider Nav -->
+							<div class="dept_slider_nav"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+
+						</div>
+							
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<script src="{% static 'hpms_static/js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'hpms_static/styles/bootstrap4/popper.js' %}"></script>
+	<script src="{% static 'hpms_static/styles/bootstrap4/bootstrap.min.js' %}"></script>
+	<script src="{% static 'hpms_static/plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+	<script src="{% static 'hpms_static/plugins/easing/easing.js' %}"></script>
+	<script src="{% static 'hpms_static/plugins/parallax-js-master/parallax.min.js' %}"></script>
+	<script src="{% static 'hpms_static/js/custom.js' %}"></script>
+{% endblock content %}

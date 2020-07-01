@@ -1,0 +1,50 @@
+{% extends "hpms_temp/base.html "%}
+{% load static %}
+
+{% block special_css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'hpms_static/styles/contact.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'hpms_static/styles/contact_responsive.css' %}">
+{% endblock special_css %}
+
+{% block special_background %}
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'hpms_static/images/contact.jpg' %}" data-speed="0.8"></div>
+{% endblock special_background %}
+
+{% block content %}
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_title">APPOINTMENT</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <!-- Appointment Details-->
+    <center>
+        <br><br><br>
+        <h1>Please Review your Information</h1>
+        <strong>DOCTOR REQUESTED: </strong> {{ doctor_select }} <br> <br>
+        <strong>NAME: </strong> {{ your_name }} <br> <br>
+        <strong>PHONE NUMBER: </strong>{{ your_phone }} <br> <br>
+        <strong>EMAIL: </strong>{{ your_email }} <br> <br>
+        <strong>SELECTED SCHEDULE: </strong>{{ your_schedule }} <br> <br>
+        <strong>PREFERRED DATE: </strong>{{ your_date }} <br> <br>
+
+    <br>
+    <strong>Note: </strong>
+    This appointment isn't final yet. We will contact you shortly to confirm your appointment.
+    </center>
+
+	<script src="{% static 'hpms_static/js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'hpms_static/styles/bootstrap4/popper.js' %}"></script>
+	<script src="{% static 'hpms_static/styles/bootstrap4/bootstrap.min.js' %}"></script>
+	<script src="{% static 'hpms_static/plugins/easing/easing.js' %}"></script>
+	<script src="{% static 'hpms_static/plugins/parallax-js-master/parallax.min.js' %}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+	<script src="{% static 'hpms_static/js/contact.js' %}"></script>
+{% endblock content %}

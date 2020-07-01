@@ -1,0 +1,158 @@
+{% extends "hpms_temp/base.html" %}
+{% load static %}
+
+{% block special_css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'hpms_static/styles/contact.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'hpms_static/styles/contact_responsive.css' %}">
+{% endblock special_css %}
+
+{% block special_background %}
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'hpms_static/images/contact.jpg' %}" data-speed="0.8"></div>
+{% endblock special_background %}
+
+{% block content %}
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_title">Contact</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact -->
+
+{% if contact_name %}
+	<br><br>
+	<center>
+		<h2>Thanks {{ contact_name }}! </h2>
+		<p>We received your email and will contact you shortly..</p>
+	</center>
+	<br><br>
+{% else %}
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+
+				<!-- Contact form -->
+				<div class="col-lg-8 contact_col">
+					<div class="contact_form">
+						<div class="contact_title">Get in touch</div>
+						<div class="contact_form_container">
+							<form action="{% url 'hpms-contact' %}" method="POST" id="contact_form" class="contact_form">
+								{% csrf_token %}
+								<input type="text" id="contact_input" name="contact-name" class="contact_input" placeholder="Your Name" required="required">
+								<input type="email" id="contact_email" name="contact-email" class="contact_input" placeholder="Your E-mail" required="required">
+								<textarea name="contact-message" class="contact_input contact_textarea" id="contact_textarea" placeholder="Message" required="required"></textarea>
+								<button class="contact_button" id="contact_button">send message</button>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!-- UPDATED CONTACT INFO -->
+				<div class="col-lg-4 contact_col">
+					<div class="info_form_container">
+						<div class="contact_info_list">
+							<div class="contact_info_title">Contact Info</div>
+							<ul>
+								<li><span>Address: </span>Beside black gate str, Alaguntan, Ajah, Lagos.</li>
+								<li><span>Email: </span>abiolaakinbode@gmail.com</li>
+								<li><span>Phone: </span>+234 811 294 2863</li>
+							</ul>
+						</div>
+						<!-- <div class="info_form_title">Make an Appointment</div>
+						 <form action="#" class="info_form" id="info_form">
+							<select name="info_form_dep" id="info_form_dep" class="info_form_dep info_input info_select">
+								<option>Department</option>
+								<option>Cardiology</option>
+								<option>Pharmacy</option>
+								<option>Medical Lab</option>
+								<option>Surgery</option>
+								<option>Dental Care</option>
+							</select>
+							<select name="info_form_doc" id="info_form_doc" class="info_form_doc info_input info_select">
+								<option>Doctor</option>
+								<option>Cardiologist</option>
+								<option>Pharmacist</option>
+								<option>Lab Attendant</option>
+								<option>Surgeon</option>
+								<option>Dentist</option>
+							</select>
+							<input type="text" class="info_input" placeholder="Name" required="required">
+							<input type="text" class="info_input" placeholder="Phone No">
+							<button class="info_form_button">make an appointment</button>
+						</form> -->
+					</div>
+				</div> 
+{% endif %}
+				<!-- contact info 
+				<div class="contact_info">
+					<div class="row">
+						 <div class="col-lg-3 offset-lg-1">
+							<div class="contact_info_list">
+								<div class="contact_info_title">Contact Info</div>
+								<ul>
+									<li><span>Address: </span>Beside black gate str, Alaguntan, Ajah, Lagos.</li>
+									<li><span>Email: </span>abiolaakinbode@gmail.com</li>
+									<li><span>Phone: </span>+234 811 294 2863</li>
+								</ul>
+							</div>
+						</div> 
+						<div class="col-lg-3">
+							<div class="contact_info_list">
+								<div class="contact_info_title">Opening Hours</div>
+								<ul>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Monday-Thursday</div>
+										<div class="ml-auto">8.00 - 19.00</div>
+									</li>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Friday</div>
+										<div class="ml-auto">8.00 - 18.30</div>
+									</li>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Saturday</div>
+										<div class="ml-auto">9.30 - 17.00</div>
+									</li>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Sunday</div>
+										<div class="ml-auto">9.30 - 15.00</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+
+	<!-- Google Map -->
+
+	<div class="contact_map">
+		 Google Map 
+		<div class="map">
+			<div id="google_map" class="google_map">
+				<div class="map_container">
+					<div id="map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.1148271879683!2d3.562513188096498!3d6.463347832287265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf7eb835027c9%3A0xc3f21834303ff832!2sBarcadi%20Bar%20and%20Lodge!5e0!3m2!1sen!2sng!4v1591888845503!5m2!1sen!2sng" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+
+	<script src="{% static 'hpms_static/js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'hpms_static/styles/bootstrap4/popper.js' %}"></script>
+	<script src="{% static 'hpms_static/styles/bootstrap4/bootstrap.min.js' %}"></script>
+	<script src="{% static 'hpms_static/plugins/easing/easing.js' %}"></script>
+	<script src="{% static 'hpms_static/plugins/parallax-js-master/parallax.min.js' %}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+	<script src="{% static 'hpms_static/js/contact.js' %}"></script>
+{% endblock content %}
