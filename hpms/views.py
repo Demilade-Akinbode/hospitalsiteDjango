@@ -18,7 +18,7 @@ def index(request):
             'Appointment for Doctor: ' + doctor_select , #subject
             appointment_details, #message
             your_email, #email from
-            ['demiladeakinbode@gmail.com'], # to email
+            ['akinbodedemilade@gmail.com'], # to email
         ) 
         
         return render(request, 'hpms_temp/appointment.html', {'title' : 'Appointment', 
@@ -47,7 +47,7 @@ def contact(request):
             'Contact message from ' + contact_name , #subject
             contact_message, #message
             contact_email, #email from
-            ['demiladeakinbode@gmail.com'], # to email
+            ['akinbodedemilade@gmail.com'], # to email
         )
 
         return render(request, 'hpms_temp/contact.html', {'title' : 'Contact Us', 'contact_name': contact_name})
@@ -70,7 +70,7 @@ def services(request):
             'Appointment for Doctor: ' + doctor_select , #subject
             appointment_details, #message
             your_email, #email from
-            ['demiladeakinbode@gmail.com'], # to email
+            ['akinbodedemilade@gmail.com'], # to email
         ) 
         
         return render(request, 'hpms_temp/appointment.html', {'title' : 'Appointment', 
@@ -99,7 +99,7 @@ def appointment(request):
             'Appointment for Doctor: ' + doctor_select , #subject
             appointment_details, #message
             your_email, #email from
-            ['demiladeakinbode@gmail.com'], # to email
+            ['akinbodedemilade@gmail.com'], # to email
         ) 
 
         return render(request, 'hpms_temp/appointment.html', {'title' : 'Appointment', 
